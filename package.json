@@ -1,0 +1,51 @@
+{
+  "name": "cdia-tutor",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "supabase:start": "supabase start",
+    "supabase:migrate": "supabase db push",
+    "supabase:types": "supabase gen types typescript --local > types/supabase.ts",
+    "scrape": "tsx scripts/scrape-curriculum.ts"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.5.0",
+    "@supabase/supabase-js": "^2.0.0",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@vitest/coverage-v8": "^2.0.0",
+    "cheerio": "^1.2.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.0.0",
+    "jsdom": "^24.0.0",
+    "postcss": "^8.0.0",
+    "prettier": "^3.0.0",
+    "tailwindcss": "^4.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  }
+}

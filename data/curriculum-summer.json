@@ -1,0 +1,289 @@
+{
+  "subjects": [
+    {
+      "id": "aritmetica-algebra-basica",
+      "name": "Aritmética y Álgebra Básica",
+      "semester": 0,
+      "year": 0,
+      "topics": [
+        {
+          "id": "fracciones-decimales",
+          "name": "Fracciones y números decimales",
+          "subtopics": [
+            "Operaciones con fracciones: suma, resta, producto, cociente",
+            "Simplificación y amplificación",
+            "Conversión entre fracciones y decimales",
+            "Fracciones equivalentes"
+          ]
+        },
+        {
+          "id": "potencias-raices",
+          "name": "Potencias y raíces",
+          "subtopics": [
+            "Propiedades de las potencias",
+            "Notación científica",
+            "Raíces cuadradas y cúbicas: simplificación",
+            "Potencias con exponente fraccionario"
+          ]
+        },
+        {
+          "id": "polinomios-factorizacion",
+          "name": "Polinomios y factorización",
+          "subtopics": [
+            "Operaciones con polinomios: suma, resta, producto",
+            "División de polinomios: Ruffini",
+            "Factorización: factor común, trinomio cuadrado perfecto, diferencia de cuadrados",
+            "Raíces de polinomios"
+          ]
+        },
+        {
+          "id": "ecuaciones-inecuaciones",
+          "name": "Ecuaciones e inecuaciones",
+          "subtopics": [
+            "Ecuaciones de primer grado: resolución y verificación",
+            "Ecuaciones de segundo grado: fórmula general y discriminante",
+            "Sistemas de ecuaciones lineales: sustitución y reducción",
+            "Inecuaciones lineales y cuadráticas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "funciones-graficas",
+      "name": "Funciones y Gráficas",
+      "semester": 0,
+      "year": 0,
+      "topics": [
+        {
+          "id": "concepto-funcion",
+          "name": "Concepto de función",
+          "subtopics": [
+            "Definición: dominio, codominio e imagen",
+            "Representación: tabla, fórmula, gráfica",
+            "Función inyectiva, sobreyectiva y biyectiva",
+            "Función inversa"
+          ]
+        },
+        {
+          "id": "tipos-funciones",
+          "name": "Tipos de funciones",
+          "subtopics": [
+            "Funciones lineales y afines: pendiente e intersección",
+            "Funciones cuadráticas: vértice, eje de simetría",
+            "Funciones polinómicas de grado superior",
+            "Funciones racionales: asíntotas"
+          ]
+        },
+        {
+          "id": "funciones-trascendentes",
+          "name": "Funciones exponencial y logarítmica",
+          "subtopics": [
+            "Función exponencial: base e y base 10",
+            "Función logarítmica: propiedades del logaritmo",
+            "Cambio de base",
+            "Ecuaciones exponenciales y logarítmicas"
+          ]
+        },
+        {
+          "id": "transformaciones-graficas",
+          "name": "Transformaciones de funciones",
+          "subtopics": [
+            "Traslaciones horizontales y verticales",
+            "Reflexiones y simetrías",
+            "Escalados y compresiones",
+            "Composición de funciones"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trigonometria-esencial",
+      "name": "Trigonometría Esencial",
+      "semester": 0,
+      "year": 0,
+      "topics": [
+        {
+          "id": "angulos-medida",
+          "name": "Ángulos y medida",
+          "subtopics": [
+            "Grados sexagesimales y radianes: conversión",
+            "Ángulos notables: 0°, 30°, 45°, 60°, 90°",
+            "Ángulos en posición estándar y cuadrantes"
+          ]
+        },
+        {
+          "id": "razones-trigonometricas",
+          "name": "Razones trigonométricas",
+          "subtopics": [
+            "Seno, coseno y tangente en triángulo rectángulo",
+            "Definición en la circunferencia unidad",
+            "Valores de seno y coseno de ángulos notables",
+            "Razones inversas: cosecante, secante, cotangente"
+          ]
+        },
+        {
+          "id": "identidades-formulas",
+          "name": "Identidades y fórmulas trigonométricas",
+          "subtopics": [
+            "Identidad fundamental: sin²x + cos²x = 1",
+            "Fórmulas de la suma y diferencia de ángulos",
+            "Fórmulas del ángulo doble",
+            "Ecuaciones trigonométricas básicas"
+          ]
+        },
+        {
+          "id": "funciones-trigonometricas",
+          "name": "Funciones trigonométricas",
+          "subtopics": [
+            "Gráficas de seno, coseno y tangente",
+            "Periodo, amplitud y desfase",
+            "Funciones trigonométricas inversas: arcsen, arccos, arctan"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "limites-derivadas-intro",
+      "name": "Introducción a Límites y Derivadas",
+      "semester": 0,
+      "year": 0,
+      "topics": [
+        {
+          "id": "limites-intro",
+          "name": "Concepto intuitivo de límite",
+          "subtopics": [
+            "Límite de una función en un punto: aproximación gráfica y numérica",
+            "Límites laterales y límite infinito",
+            "Indeterminaciones básicas: 0/0, ∞/∞",
+            "Asíntotas horizontales y verticales"
+          ]
+        },
+        {
+          "id": "continuidad-intro",
+          "name": "Continuidad de funciones",
+          "subtopics": [
+            "Definición intuitiva de continuidad",
+            "Tipos de discontinuidades: evitable, de salto, esencial",
+            "Continuidad de funciones elementales"
+          ]
+        },
+        {
+          "id": "derivada-intro",
+          "name": "Concepto de derivada",
+          "subtopics": [
+            "Interpretación geométrica: recta tangente",
+            "Interpretación física: velocidad instantánea",
+            "Derivadas de funciones elementales: potencias, sen, cos, exp, log",
+            "Reglas básicas: suma, producto, cociente, cadena"
+          ]
+        },
+        {
+          "id": "aplicaciones-derivada-intro",
+          "name": "Aplicaciones elementales de la derivada",
+          "subtopics": [
+            "Monotonía: función creciente y decreciente",
+            "Máximos y mínimos locales",
+            "Optimización: problemas de máximos y mínimos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geometria-vectorial-basica",
+      "name": "Geometría Vectorial Básica",
+      "semester": 0,
+      "year": 0,
+      "topics": [
+        {
+          "id": "vectores-plano",
+          "name": "Vectores en el plano",
+          "subtopics": [
+            "Definición: módulo, dirección y sentido",
+            "Suma de vectores y producto por escalar",
+            "Vectores en coordenadas cartesianas",
+            "Vectores unitarios y normalización"
+          ]
+        },
+        {
+          "id": "operaciones-vectores",
+          "name": "Operaciones con vectores",
+          "subtopics": [
+            "Producto escalar: definición y propiedades",
+            "Producto escalar y ángulo entre vectores",
+            "Proyección de un vector sobre otro",
+            "Vectores ortogonales y ortogonales unitarios"
+          ]
+        },
+        {
+          "id": "vectores-espacio",
+          "name": "Vectores en el espacio tridimensional",
+          "subtopics": [
+            "Coordenadas en R³",
+            "Módulo y distancia en R³",
+            "Producto vectorial: definición geométrica",
+            "Aplicaciones: área de triángulo, volumen de paralelepípedo"
+          ]
+        },
+        {
+          "id": "geometria-analitica",
+          "name": "Geometría analítica básica",
+          "subtopics": [
+            "Ecuación de la recta: paramétrica, implícita, explícita",
+            "Distancia de un punto a una recta",
+            "Ecuación del plano en R³",
+            "Intersección de rectas y planos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "combinatoria-logica-basica",
+      "name": "Combinatoria y Lógica Básica",
+      "semester": 0,
+      "year": 0,
+      "topics": [
+        {
+          "id": "teoria-conjuntos-basica",
+          "name": "Teoría de conjuntos básica",
+          "subtopics": [
+            "Notación y representación de conjuntos",
+            "Operaciones: unión, intersección, complementario, diferencia",
+            "Diagramas de Venn",
+            "Producto cartesiano y pares ordenados"
+          ]
+        },
+        {
+          "id": "logica-basica",
+          "name": "Lógica básica y razonamiento",
+          "subtopics": [
+            "Proposiciones y conectivas: y, o, no, implica",
+            "Tablas de verdad",
+            "Leyes de De Morgan",
+            "Razonamiento deductivo e inductivo"
+          ]
+        },
+        {
+          "id": "combinatoria-basica",
+          "name": "Combinatoria básica",
+          "subtopics": [
+            "Principio multiplicativo y aditivo",
+            "Permutaciones sin repetición",
+            "Combinaciones: coeficiente binomial",
+            "Triángulo de Pascal",
+            "Variaciones con repetición"
+          ]
+        },
+        {
+          "id": "probabilidad-basica",
+          "name": "Probabilidad básica",
+          "subtopics": [
+            "Espacio muestral y sucesos",
+            "Definición clásica (Laplace) y frecuentista",
+            "Probabilidad de la unión e intersección",
+            "Probabilidad condicionada e independencia de sucesos"
+          ]
+        }
+      ]
+    }
+  ]
+}
