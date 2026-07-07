@@ -28,6 +28,25 @@ export function isWeakTopic(exercisesCorrect: number, exercisesAttempted: number
   return calculateProgress(exercisesCorrect, exercisesAttempted) < 50
 }
 
+export function getTopicStats(
+  subjectId: string,
+  topicId: string,
+  progress: TopicProgress[]
+): { attempted: number; correct: number; percent: number; isWeak: boolean; hasActivity: boolean } {
+  const p = progress.find((x) => x.subjectId === subjectId && x.topicId === topicId)
+  if (!p || p.exercisesAttempted === 0) {
+    return { attempted: 0, correct: 0, percent: 0, isWeak: false, hasActivity: false }
+  }
+  const percent = Math.round((p.exercisesCorrect / p.exercisesAttempted) * 100)
+  return {
+    attempted: p.exercisesAttempted,
+    correct: p.exercisesCorrect,
+    percent,
+    isWeak: isWeakTopic(p.exercisesCorrect, p.exercisesAttempted),
+    hasActivity: true,
+  }
+}
+
 export function calculateSubjectProgress(
   subject: Subject,
   progress: TopicProgress[]
