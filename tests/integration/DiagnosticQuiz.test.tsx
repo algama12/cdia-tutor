@@ -6,11 +6,12 @@ import * as actions from '@/app/(app)/onboarding/actions'
 import type { DiagnosticQuestion } from '@/types'
 
 vi.mock('@/app/(app)/onboarding/actions', () => ({
-  saveDiagnosticAnswers: vi.fn().mockResolvedValue(undefined),
+  saveDiagnosticAnswers: vi.fn().mockResolvedValue(null),
 }))
 
+const mockPush = vi.fn()
 vi.mock('next/navigation', () => ({
-  useRouter: () => ({ push: vi.fn() }),
+  useRouter: () => ({ push: mockPush }),
 }))
 
 const mockQuestions: DiagnosticQuestion[] = [
@@ -40,6 +41,7 @@ const mockQuestions: DiagnosticQuestion[] = [
 describe('DiagnosticQuiz', () => {
   beforeEach(() => {
     vi.clearAllMocks()
+    vi.mocked(actions.saveDiagnosticAnswers).mockResolvedValue(null)
   })
 
   it('renders first question text', () => {
@@ -111,6 +113,38 @@ describe('DiagnosticQuiz', () => {
     expect(answers[0]).toEqual({ questionId: 'q1', selectedIndex: 1 })
     expect(answers[1]).toEqual({ questionId: 'q2', selectedIndex: 1 })
     expect(answers[2]).toEqual({ questionId: 'q3', selectedIndex: 2 })
+  })
+
+  it('redirects to /onboarding/results after completing quiz', async () => {
+    const user = userEvent.setup()
+    render(<DiagnosticQuiz questions={mockQuestions} />)
+
+    await user.click(screen.getByText('5/6'))
+    await user.click(screen.getByRole('button', { name: /siguiente/i }))
+    await user.click(screen.getByText('ℝ - {0}'))
+    await user.click(screen.getByRole('button', { name: /siguiente/i }))
+    await user.click(screen.getByText('1/2'))
+    await user.click(screen.getByRole('button', { name: /ver resultados/i }))
+
+    expect(mockPush).toHaveBeenCalledWith('/onboarding/results')
+  })
+
+  it('shows error and does not redirect when action fails', async () => {
+    vi.mocked(actions.saveDiagnosticAnswers).mockResolvedValue({
+      error: 'Error al guardar las respuestas',
+    })
+    const user = userEvent.setup()
+    render(<DiagnosticQuiz questions={mockQuestions} />)
+
+    await user.click(screen.getByText('5/6'))
+    await user.click(screen.getByRole('button', { name: /siguiente/i }))
+    await user.click(screen.getByText('ℝ - {0}'))
+    await user.click(screen.getByRole('button', { name: /siguiente/i }))
+    await user.click(screen.getByText('1/2'))
+    await user.click(screen.getByRole('button', { name: /ver resultados/i }))
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('Error al guardar las respuestas')
+    expect(mockPush).not.toHaveBeenCalled()
   })
 
   it('highlights selected option', async () => {

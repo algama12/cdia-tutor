@@ -15,6 +15,7 @@ export function DiagnosticQuiz({ questions }: DiagnosticQuizProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [answers, setAnswers] = useState<DiagnosticAnswer[]>([])
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const [error, setError] = useState<string | null>(null)
   const [isPending, startTransition] = useTransition()
 
   const currentQuestion = questions[currentIndex]
@@ -37,7 +38,11 @@ export function DiagnosticQuiz({ questions }: DiagnosticQuizProps) {
 
     if (isLastQuestion) {
       startTransition(async () => {
-        await saveDiagnosticAnswers(newAnswers)
+        const result = await saveDiagnosticAnswers(newAnswers)
+        if (result?.error) {
+          setError(result.error)
+          return
+        }
         router.push('/onboarding/results')
       })
     } else {
@@ -85,6 +90,12 @@ export function DiagnosticQuiz({ questions }: DiagnosticQuizProps) {
             </button>
           ))}
         </div>
+
+        {error && (
+          <p role="alert" className="mb-4 text-sm text-error">
+            {error}
+          </p>
+        )}
 
         <div className="flex justify-end">
           {isLastQuestion ? (

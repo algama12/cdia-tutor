@@ -21,7 +21,9 @@ export async function skipSummerMode(): Promise<void> {
   redirect('/dashboard')
 }
 
-export async function saveDiagnosticAnswers(answers: DiagnosticAnswer[]): Promise<void> {
+export async function saveDiagnosticAnswers(
+  answers: DiagnosticAnswer[]
+): Promise<{ error: string } | null> {
   const supabase = await createClient()
   const {
     data: { user },
@@ -32,7 +34,7 @@ export async function saveDiagnosticAnswers(answers: DiagnosticAnswer[]): Promis
   const report = calculateDiagnosticLevel(answers, DIAGNOSTIC_QUESTIONS)
   const plan = generateLevelingPlan(report)
 
-  await supabase.from('summer_mode_progress').upsert(
+  const { error } = await supabase.from('summer_mode_progress').upsert(
     {
       user_id: user.id,
       status: 'in_progress',
@@ -42,7 +44,9 @@ export async function saveDiagnosticAnswers(answers: DiagnosticAnswer[]): Promis
     { onConflict: 'user_id' }
   )
 
-  redirect('/onboarding/results')
+  if (error) return { error: error.message }
+
+  return null
 }
 
 export async function markModuleComplete(moduleId: string): Promise<void> {
