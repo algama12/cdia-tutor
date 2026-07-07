@@ -55,3 +55,31 @@ export interface UserProfile {
   fullName: string | null
   createdAt: string
 }
+
+// Summer Mode types
+
+export interface DiagnosticQuestion {
+  id: string
+  text: string
+  options: string[]
+  correctIndex: number
+  moduleId: string
+}
+
+export interface DiagnosticAnswer {
+  questionId: string
+  selectedIndex: number
+}
+
+export type ModuleLevel = 'needs_review' | 'ok'
+
+export interface LevelReport {
+  [moduleId: string]: ModuleLevel
+}
+
+export type SummerModeStatus = 'not_started' | 'in_progress' | 'completed' | 'skipped'
+
+export interface SummerModuleProgress {
+  moduleId: string
+  status: 'not_started' | 'in_progress' | 'completed'
+}

@@ -1,4 +1,4 @@
-export const PROTECTED_PREFIXES = ['/dashboard', '/subject', '/session']
+export const PROTECTED_PREFIXES = ['/dashboard', '/subject', '/session', '/onboarding']
 export const AUTH_PATHS = ['/login', '/register', '/forgot-password']
 
 export function isProtectedRoute(pathname: string): boolean {
