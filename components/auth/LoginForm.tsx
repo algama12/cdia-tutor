@@ -3,7 +3,7 @@
 import { useState, useTransition } from 'react'
 import Link from 'next/link'
 import { Eye, EyeOff, Loader2 } from 'lucide-react'
-import { loginWithEmail, loginWithGoogle } from '@/app/(auth)/login/actions'
+import { loginWithEmail } from '@/app/(auth)/login/actions'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Label } from '@/components/ui/Label'
@@ -19,14 +19,6 @@ export function LoginForm() {
     setError(null)
     startTransition(async () => {
       const result = await loginWithEmail(formData)
-      if (result?.error) setError(result.error)
-    })
-  }
-
-  function handleGoogleLogin() {
-    setError(null)
-    startTransition(async () => {
-      const result = await loginWithGoogle()
       if (result?.error) setError(result.error)
     })
   }
@@ -106,23 +98,6 @@ export function LoginForm() {
         </Button>
       </form>
 
-      <div className="relative flex items-center gap-3">
-        <div className="flex-1 border-t border-border" />
-        <span className="text-xs text-text-faint">o</span>
-        <div className="flex-1 border-t border-border" />
-      </div>
-
-      <Button
-        type="button"
-        variant="outline"
-        onClick={handleGoogleLogin}
-        disabled={isPending}
-        className="w-full gap-2"
-      >
-        <GoogleIcon />
-        Continuar con Google
-      </Button>
-
       <p className="text-center text-sm text-text-muted">
         ¿No tienes cuenta?{' '}
         <Link
@@ -133,28 +108,5 @@ export function LoginForm() {
         </Link>
       </p>
     </div>
-  )
-}
-
-function GoogleIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-      <path
-        d="M15.68 8.18c0-.57-.05-1.11-.14-1.64H8v3.1h4.3a3.68 3.68 0 0 1-1.6 2.41v2h2.59c1.51-1.39 2.39-3.44 2.39-5.87Z"
-        fill="#4285F4"
-      />
-      <path
-        d="M8 16c2.16 0 3.97-.72 5.3-1.94l-2.6-2.02c-.71.48-1.63.76-2.7.76-2.08 0-3.84-1.4-4.47-3.29H.85v2.08A8 8 0 0 0 8 16Z"
-        fill="#34A853"
-      />
-      <path
-        d="M3.53 9.51A4.8 4.8 0 0 1 3.28 8c0-.53.09-1.04.25-1.51V4.41H.85A8 8 0 0 0 0 8c0 1.29.31 2.51.85 3.59l2.68-2.08Z"
-        fill="#FBBC05"
-      />
-      <path
-        d="M8 3.2c1.17 0 2.22.4 3.05 1.19l2.28-2.28A8 8 0 0 0 .85 4.41l2.68 2.08C4.16 4.6 5.92 3.2 8 3.2Z"
-        fill="#EA4335"
-      />
-    </svg>
   )
 }

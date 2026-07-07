@@ -6,7 +6,6 @@ import * as actions from '@/app/(auth)/login/actions'
 
 vi.mock('@/app/(auth)/login/actions', () => ({
   loginWithEmail: vi.fn().mockResolvedValue(null),
-  loginWithGoogle: vi.fn().mockResolvedValue(undefined),
 }))
 
 vi.mock('next/link', () => ({
@@ -19,7 +18,6 @@ describe('LoginForm', () => {
   beforeEach(() => {
     vi.clearAllMocks()
     vi.mocked(actions.loginWithEmail).mockResolvedValue(null)
-    vi.mocked(actions.loginWithGoogle).mockResolvedValue(undefined)
   })
 
   it('renders email input', () => {
@@ -35,11 +33,6 @@ describe('LoginForm', () => {
   it('renders submit button', () => {
     render(<LoginForm />)
     expect(screen.getByRole('button', { name: /iniciar sesión/i })).toBeInTheDocument()
-  })
-
-  it('renders Google OAuth button', () => {
-    render(<LoginForm />)
-    expect(screen.getByRole('button', { name: /google/i })).toBeInTheDocument()
   })
 
   it('renders link to register page', () => {
