@@ -1,1 +1,64 @@
 @import "tailwindcss";
+
+@theme {
+  /* ── Fondos ──────────────────────────────────── */
+  --color-base:     #080B12;
+  --color-bg:       #0D1117;
+  --color-surface:  #141B25;
+  --color-elevated: #1C2537;
+
+  /* ── Bordes ──────────────────────────────────── */
+  --color-border:        #253048;
+  --color-border-subtle: #1A2235;
+
+  /* ── Texto ───────────────────────────────────── */
+  --color-text:         #EBF0FF;
+  --color-text-muted:   #8A9DBF;
+  --color-text-faint:   #4A5970;
+  --color-text-inverse: #0D1117;
+
+  /* ── Acento primario — Indigo eléctrico ─────── */
+  --color-primary:        #6C8EF4;
+  --color-primary-hover:  #5A7CE8;
+  --color-primary-subtle: #1A2850;
+
+  /* ── Acento secundario — Teal ────────────────── */
+  --color-secondary:        #4ECDC4;
+  --color-secondary-hover:  #3DBDB4;
+  --color-secondary-subtle: #0E2B2A;
+
+  /* ── Estados semánticos ─────────────────────── */
+  --color-success:        #4ADE80;
+  --color-success-subtle: #0A2E1A;
+  --color-warning:        #FCD34D;
+  --color-warning-subtle: #2A1F00;
+  --color-error:          #F87171;
+  --color-error-subtle:   #2E0A0A;
+
+  /* ── Tipografía ─────────────────────────────── */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ── Radio de borde ─────────────────────────── */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+}
+
+/* KaTeX dark mode overrides */
+.katex { color: var(--color-text); }
+.katex-display {
+  background: var(--color-elevated);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
