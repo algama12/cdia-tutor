@@ -1,7 +1,7 @@
 -- Sessions table
 create table if not exists public.sessions (
   id uuid primary key default gen_random_uuid(),
-  user_id uuid references public.profiles(id) on delete cascade not null,
+  user_id uuid references auth.users(id) on delete cascade not null,
   subject_id text not null,
   topic_id text not null,
   mode text not null check (mode in ('explain', 'exercise', 'review')),
@@ -52,7 +52,7 @@ create policy "Users can insert messages in own sessions"
 -- Topic progress table
 create table if not exists public.topic_progress (
   id uuid primary key default gen_random_uuid(),
-  user_id uuid references public.profiles(id) on delete cascade not null,
+  user_id uuid references auth.users(id) on delete cascade not null,
   subject_id text not null,
   topic_id text not null,
   exercises_attempted int not null default 0,
