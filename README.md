@@ -195,6 +195,6 @@ GitHub: [@algama12](https://github.com/algama12)
 | Aplicación | [cdiatutor.online](https://cdiatutor.online) |
 | Repositorio | [github.com/algama12/cdia-tutor](https://github.com/algama12/cdia-tutor) |
 | Slides | [gamma.app/docs/CDIA-Tutor-k4k02i29ktoeqn1](https://gamma.app/docs/CDIA-Tutor-k4k02i29ktoeqn1) |
-| Vídeo | pendiente |
+| Vídeo | [youtube.com/watch?v=Y62ZD3_lmwU](https://www.youtube.com/watch?v=Y62ZD3_lmwU) |
 
 *TFM — Máster en Desarrollo de Software con IA · BIG school · Julio 2026*
