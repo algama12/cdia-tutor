@@ -38,19 +38,22 @@ export default async function SummerModulePage({ params }: Props) {
 
   const plan: string[] = Array.isArray(progress?.leveling_plan)
     ? (progress.leveling_plan as string[])
-    : []
-  const completed: string[] = Array.isArray(progress?.completed_modules)
+    : MODULE_ORDER.slice()
+  const completedModules: string[] = Array.isArray(progress?.completed_modules)
     ? (progress.completed_modules as string[])
     : []
-  const totalInPlan = plan.length
-  const completedCount = plan.filter((id) => completed.includes(id)).length
+
+  const completedInPlan = plan.filter((id) => completedModules.includes(id))
 
   return (
     <SummerModuleSession
       moduleId={moduleId}
       moduleName={MODULE_NAMES[moduleId as SummerModuleId] ?? subject.name}
       subject={subject}
-      planProgress={{ completed: completedCount, total: totalInPlan }}
+      planProgress={{ completed: completedInPlan.length, total: plan.length }}
+      plan={plan}
+      completedModules={completedModules}
+      allModuleNames={MODULE_NAMES}
     />
   )
 }

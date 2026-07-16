@@ -149,7 +149,7 @@ El proyecto se desarrolló aplicando **SDD (Spec-Driven Development) + TDD (Test
 ### Cobertura de tests
 
 ```
-162 tests en total
+161 tests en total
 ├── Unit (Vitest)         — lógica pura, utilidades, prompts, cálculo de progreso
 ├── Integration (Testing Library) — componentes, formularios, flujos de UI
 └── E2E (Playwright)      — flujos completos de autenticación y navegación
@@ -188,5 +188,13 @@ Backend Developer · Estudiante del Máster en Desarrollo de Software con IA (BI
 GitHub: [@algama12](https://github.com/algama12)
 
 ---
+## Entregables TFM
+
+| Recurso | URL |
+|---|---|
+| Aplicación | [cdiatutor.online](https://cdiatutor.online) |
+| Repositorio | [github.com/algama12/cdia-tutor](https://github.com/algama12/cdia-tutor) |
+| Slides | [gamma.app/docs/CDIA-Tutor-k4k02i29ktoeqn1](https://gamma.app/docs/CDIA-Tutor-k4k02i29ktoeqn1) |
+| Vídeo | pendiente |
 
 *TFM — Máster en Desarrollo de Software con IA · BIG school · Julio 2026*
